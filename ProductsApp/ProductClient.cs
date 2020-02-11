@@ -8,9 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 10-2-2020 10:55:33
-using System;
-
+// Generation date: 11-2-2020 13:14:54
 namespace ProductsApp
 {
     /// <summary>
@@ -23,7 +21,7 @@ namespace ProductsApp
         /// Initialize a new DefaultContainer object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public DefaultContainer(global::System.Uri serviceRoot) :
+        public DefaultContainer(global::System.Uri serviceRoot) : 
                 base(serviceRoot, global::Microsoft.OData.Client.ODataProtocolVersion.V4)
         {
             this.ResolveName = new global::System.Func<global::System.Type, string>(this.ResolveNameFromType);
@@ -178,7 +176,7 @@ namespace ProductsApp
         <Property Name=""AmountMade"" Type=""Edm.Double"" Nullable=""false"" />
         <Property Name=""Brand"" Type=""Demos._Brands"" Nullable=""false"" />
         <Property Name=""Colour"" Type=""Edm.String"" />
-        <Property Name=""CreationTime"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
+        <Property Name=""TimeWhenAddedToDatabase"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
         <Property Name=""APK"" Type=""Edm.Boolean"" Nullable=""false"" />
       </EntityType>
       <EnumType Name=""_Brands"">
@@ -189,12 +187,11 @@ namespace ProductsApp
         <Member Name=""Volkswagen"" Value=""4"" />
         <Member Name=""Nissan"" Value=""5"" />
         <Member Name=""Audi"" Value=""6"" />
-        <Member Name=""hyundai"" Value=""7"" />
-        <Member Name=""Ford"" Value=""8"" />
-        <Member Name=""Honda"" Value=""9"" />
-        <Member Name=""BMW"" Value=""10"" />
-        <Member Name=""Mercedes"" Value=""11"" />
-        <Member Name=""Toyota"" Value=""12"" />
+        <Member Name=""Ford"" Value=""7"" />
+        <Member Name=""Honda"" Value=""8"" />
+        <Member Name=""BMW"" Value=""9"" />
+        <Member Name=""Mercedes"" Value=""10"" />
+        <Member Name=""Toyota"" Value=""11"" />
       </EnumType>
       <EntityContainer Name=""DefaultContainer"">
         <EntitySet Name=""People"" EntityType=""Demos.Person"">
@@ -219,7 +216,7 @@ namespace ProductsApp
                 {
                     global::System.Collections.Generic.IEnumerable<global::Microsoft.OData.Edm.Validation.EdmError> errors;
                     global::Microsoft.OData.Edm.IEdmModel edmModel;
-
+                    
                     if (!global::Microsoft.OData.Edm.Csdl.CsdlReader.TryParse(reader, true, out edmModel, out errors))
                     {
                         global::System.Text.StringBuilder errorMessages = new System.Text.StringBuilder();
@@ -255,19 +252,19 @@ namespace ProductsApp
         /// Initialize a new PersonSingle object.
         /// </summary>
         public PersonSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
+            : base(context, path) {}
 
         /// <summary>
         /// Initialize a new PersonSingle object.
         /// </summary>
         public PersonSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
+            : base(context, path, isComposable) {}
 
         /// <summary>
         /// Initialize a new PersonSingle object.
         /// </summary>
         public PersonSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Person> query)
-            : base(query) { }
+            : base(query) {}
 
         /// <summary>
         /// There are no comments for Trips in the schema.
@@ -436,19 +433,19 @@ namespace ProductsApp
         /// Initialize a new TripSingle object.
         /// </summary>
         public TripSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
+            : base(context, path) {}
 
         /// <summary>
         /// Initialize a new TripSingle object.
         /// </summary>
         public TripSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
+            : base(context, path, isComposable) {}
 
         /// <summary>
         /// Initialize a new TripSingle object.
         /// </summary>
         public TripSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Trip> query)
-            : base(query) { }
+            : base(query) {}
 
     }
     /// <summary>
@@ -549,19 +546,19 @@ namespace ProductsApp
         /// Initialize a new CarSingle object.
         /// </summary>
         public CarSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
+            : base(context, path) {}
 
         /// <summary>
         /// Initialize a new CarSingle object.
         /// </summary>
         public CarSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
+            : base(context, path, isComposable) {}
 
         /// <summary>
         /// Initialize a new CarSingle object.
         /// </summary>
         public CarSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Car> query)
-            : base(query) { }
+            : base(query) {}
 
     }
     /// <summary>
@@ -581,16 +578,16 @@ namespace ProductsApp
         /// <param name="ID">Initial value of ID.</param>
         /// <param name="amountMade">Initial value of AmountMade.</param>
         /// <param name="brand">Initial value of Brand.</param>
-        /// <param name="creationTime">Initial value of CreationTime.</param>
+        /// <param name="timeWhenAddedToDatabase">Initial value of TimeWhenAddedToDatabase.</param>
         /// <param name="aPK">Initial value of APK.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public static Car CreateCar(int ID, double amountMade, global::ProductsApp._Brands brand, global::System.DateTimeOffset creationTime, bool aPK)
+        public static Car CreateCar(int ID, double amountMade, global::ProductsApp._Brands brand, global::System.DateTimeOffset timeWhenAddedToDatabase, bool aPK)
         {
             Car car = new Car();
             car.ID = ID;
             car.AmountMade = amountMade;
             car.Brand = brand;
-            car.CreationTime = creationTime;
+            car.TimeWhenAddedToDatabase = timeWhenAddedToDatabase;
             car.APK = aPK;
             return car;
         }
@@ -687,28 +684,28 @@ namespace ProductsApp
         partial void OnColourChanging(string value);
         partial void OnColourChanged();
         /// <summary>
-        /// There are no comments for Property CreationTime in the schema.
+        /// There are no comments for Property TimeWhenAddedToDatabase in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CreationTime")]
-        public global::System.DateTimeOffset CreationTime
+        [global::Microsoft.OData.Client.OriginalNameAttribute("TimeWhenAddedToDatabase")]
+        public global::System.DateTimeOffset TimeWhenAddedToDatabase
         {
             get
             {
-                return this._CreationTime;
+                return this._TimeWhenAddedToDatabase;
             }
             set
             {
-                this.OnCreationTimeChanging(value);
-                this._CreationTime = value;
-                this.OnCreationTimeChanged();
-                this.OnPropertyChanged("CreationTime");
+                this.OnTimeWhenAddedToDatabaseChanging(value);
+                this._TimeWhenAddedToDatabase = value;
+                this.OnTimeWhenAddedToDatabaseChanged();
+                this.OnPropertyChanged("TimeWhenAddedToDatabase");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::System.DateTimeOffset _CreationTime;
-        partial void OnCreationTimeChanging(global::System.DateTimeOffset value);
-        partial void OnCreationTimeChanged();
+        private global::System.DateTimeOffset _TimeWhenAddedToDatabase;
+        partial void OnTimeWhenAddedToDatabaseChanging(global::System.DateTimeOffset value);
+        partial void OnTimeWhenAddedToDatabaseChanged();
         /// <summary>
         /// There are no comments for Property APK in the schema.
         /// </summary>
@@ -770,18 +767,16 @@ namespace ProductsApp
         Nissan = 5,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Audi")]
         Audi = 6,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("hyundai")]
-        Hyundai = 7,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Ford")]
-        Ford = 8,
+        Ford = 7,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Honda")]
-        Honda = 9,
+        Honda = 8,
         [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
-        BMW = 10,
+        BMW = 9,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Mercedes")]
-        Mercedes = 11,
+        Mercedes = 10,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Toyota")]
-        Toyota = 12
+        Toyota = 11
     }
     /// <summary>
     /// Class containing all extension methods
@@ -858,45 +853,4 @@ namespace ProductsApp
             return new global::ProductsApp.CarSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
     }
-
-    class AProgram
-    {
-        // Get an entire entity set.
-        static void ListAllProducts(DefaultContainer container)
-        {
-            foreach (var p in container.Cars)
-            {
-                Console.WriteLine("{0}", p.ID);
-            }
-        }
-
-        static void AddCar(DefaultContainer container, Car car)
-            //ProductService.Models.Product product
-        {
-            //container.AddToProducts(product);
-            container.AddToCars(car);
-            var serviceResponse = container.SaveChanges();
-            foreach (var operationResponse in serviceResponse)
-            {
-                Console.WriteLine("Response: {0}", operationResponse.StatusCode);
-            }
-        }
-
-        static void Main(string[] args)
-        {
-            string serviceUri= "http://localhost:57449/";
-            //var container = new Default.Container(new Uri(serviceUri));
-            var container = new DefaultContainer(new Uri(serviceUri));
-
-            //var car = new ProductService.Models.Product()
-            var car = new Car()
-            {
-                ID = 20
-            };
-
-            AddCar(container, car);
-            ListAllProducts(container);
-        }
-    }
 }
-
