@@ -56,7 +56,6 @@ namespace ProductsApp
             Console.WriteLine($"Give the ID of the car you wish to change \n");
 
             userInput = Console.ReadLine();
-            
 
             while (!int.TryParse(userInput, out cleanInput))
             {
@@ -82,11 +81,11 @@ namespace ProductsApp
                         input1 = Console.ReadLine();
                     }
 
-                    Console.Write("Type the color of the car, and then press Enter: \n");
-                    colour = Console.ReadLine();
+                        Console.Write("Type the color of the car, and then press Enter: \n");
+                        colour = Console.ReadLine();
 
-                    Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
-                    input1 = Console.ReadLine().ToLower();
+                        Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
+                        input1 = Console.ReadLine().ToLower();
 
                     if (string.Equals(input1, "true"))
                     {
@@ -96,14 +95,14 @@ namespace ProductsApp
                         p.Brand = SetBrand();
                         p.Colour = colour;
                         p.APK = answer;
-                    
-                    Console.WriteLine(p.AmountMade);
-                    Console.WriteLine(p.Brand);
-                    Console.WriteLine(p.Colour);
-                    Console.WriteLine(p.APK);
 
-                    container.UpdateObject(p);
-                    var serviceResponse = container.SaveChanges();
+                        Console.WriteLine(p.AmountMade);
+                        Console.WriteLine(p.Brand);
+                        Console.WriteLine(p.Colour);
+                        Console.WriteLine(p.APK);
+
+                        container.UpdateObject(p);
+                        var serviceResponse = container.SaveChanges();
 
                     foreach (var operationResponse in serviceResponse)
                     {
@@ -308,10 +307,13 @@ namespace ProductsApp
                     case "R":
                         //didnt start makeing this yet
                         Console.WriteLine("\n");
+                        
+
                         //search car by id
                         //remove car
                         break;
                 }
+
                 Console.WriteLine("------------------------\n");
                
                 // Ask if they want to close the app or continue
