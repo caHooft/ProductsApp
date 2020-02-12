@@ -16,7 +16,6 @@ namespace ProductsApp
             }
             Console.WriteLine("Currently this database holds {0} cars", carsTracker);
             return carsTracker;
-
         }
 
         static void ReadEntry(DefaultContainer container)
@@ -95,7 +94,8 @@ namespace ProductsApp
                         p.Brand = SetBrand();
                         p.Colour = colour;
                         p.APK = answer;
-
+                        
+                        
                         Console.WriteLine(p.AmountMade);
                         Console.WriteLine(p.Brand);
                         Console.WriteLine(p.Colour);
@@ -225,7 +225,9 @@ namespace ProductsApp
 
             Console.Write("Type the color of the car, and then press Enter: \n");
             colour = Console.ReadLine();
-            
+
+            //Console.WriteLine("\tt - Add creation time");
+
             Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
             input1 = Console.ReadLine().ToLower();
 
@@ -246,12 +248,14 @@ namespace ProductsApp
             };
 
             container.AddToCars(car);
+            
             var serviceResponse = container.SaveChanges();
 
             foreach (var operationResponse in serviceResponse)
             {
                 Console.WriteLine("Response: {0}", operationResponse.StatusCode);
             }
+            
 
             Console.WriteLine($"Your result: Added a car");
         }
