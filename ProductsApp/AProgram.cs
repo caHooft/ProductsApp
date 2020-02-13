@@ -90,19 +90,14 @@ namespace ProductsApp
                     {
                         answer = true;
                     }
-                        p.AmountMade = cleanNum1;
-                        p.Brand = SetBrand();
-                        p.Colour = colour;
-                        p.APK = answer;
-                        
-                        
-                        Console.WriteLine(p.AmountMade);
-                        Console.WriteLine(p.Brand);
-                        Console.WriteLine(p.Colour);
-                        Console.WriteLine(p.APK);
 
-                        container.UpdateObject(p);
-                        var serviceResponse = container.SaveChanges();
+                    p.AmountMade = cleanNum1;
+                    p.Brand = SetBrand();
+                    p.Colour = colour;
+                    p.APK = answer;
+                    container.UpdateObject(p);     
+
+                    var serviceResponse = container.SaveChanges();
 
                     foreach (var operationResponse in serviceResponse)
                     {
