@@ -113,6 +113,38 @@ namespace ProductsApp
             Console.WriteLine($"Your result: Changed a car \n");
         }
 
+        static void DeleteEntry(DefaultContainer container)
+        {
+            string userInput = " ";
+            int cleanInput = 0;
+
+            Console.WriteLine($"Give the ID of the car you wish to remove \n");
+
+            userInput = Console.ReadLine();
+
+            while (!int.TryParse(userInput, out cleanInput))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: \n");
+                userInput = Console.ReadLine();
+            }
+
+            foreach (var p in container.Cars)
+            {
+                if (p.ID == cleanInput)
+                {
+                    container.UpdateObject(p);
+
+                    var serviceResponse = container.SaveChanges();
+
+                    foreach (var operationResponse in serviceResponse)
+                    {
+                        Console.WriteLine("Response: {0}", operationResponse.StatusCode);
+                    }
+                }
+            }
+            Console.WriteLine($"Your result: removed a car \n");
+        }
+
         //set the brand to what the user of the software wants 
         static _Brands SetBrand()
         {
@@ -259,7 +291,7 @@ namespace ProductsApp
 
             Console.WriteLine($"Your result: Added a car");
         }
-
+        
         //this gets run first i also call the other functions from here
         static void Main(string[] args)
         {
@@ -295,7 +327,9 @@ namespace ProductsApp
                         break;
 
                     case "c":
-                        //changes values but doesnt update the database?
+                        //changes values client side
+                        //server side problems
+
                         Console.WriteLine("\n");
                         ChangeEntry(container);
                         //search car by id
@@ -310,9 +344,9 @@ namespace ProductsApp
 
                     case "R":
                         //didnt start makeing this yet
+                        //should be implemented server side
                         Console.WriteLine("\n");
-                        
-
+                        DeleteEntry(container);
                         //search car by id
                         //remove car
                         break;
