@@ -110,6 +110,7 @@ namespace ProductsApp
 
         static void DeleteEntry(DefaultContainer container)
         {
+
             string userInput = " ";
             int cleanInput = 0;
 
@@ -127,7 +128,8 @@ namespace ProductsApp
             {
                 if (p.ID == cleanInput)
                 {
-                    container.UpdateObject(p);
+                    container.DeleteObject(p);
+                    //container.UpdateObject(p);
 
                     var serviceResponse = container.SaveChanges();
 
@@ -137,6 +139,7 @@ namespace ProductsApp
                     }
                 }
             }
+
             Console.WriteLine($"Your result: removed a car \n");
         }
 
