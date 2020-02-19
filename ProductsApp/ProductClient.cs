@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 19-2-2020 12:46:48
+// Generation date: 19-2-2020 16:23:44
 namespace ProductsApp
 {
     /// <summary>
@@ -374,7 +374,30 @@ namespace ProductsApp
     [global::Microsoft.OData.Client.OriginalNameAttribute("_Brands")]
     public enum _Brands
     {
-        Tesla, Ferrari, Mini, Porsche, Volkswagen, Nissan, Audi, Ford, Honda, BMW, Mercedes, Toyota
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Tesla")]
+        Tesla = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Ferrari")]
+        Ferrari = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Mini")]
+        Mini = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Porsche")]
+        Porsche = 3,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Volkswagen")]
+        Volkswagen = 4,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Nissan")]
+        Nissan = 5,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Audi")]
+        Audi = 6,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Ford")]
+        Ford = 7,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Honda")]
+        Honda = 8,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
+        BMW = 9,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Mercedes")]
+        Mercedes = 10,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Toyota")]
+        Toyota = 11
     }
     /// <summary>
     /// Class containing all extension methods

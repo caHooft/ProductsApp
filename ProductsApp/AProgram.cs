@@ -37,7 +37,7 @@ namespace ProductsApp
                 if (p.ID == cleanInput)
                 {
                     Console.WriteLine(p.AmountMade);
-                    Console.WriteLine(p.Brand);
+                    //Console.WriteLine(p.Brand);
                     Console.WriteLine(p.Colour);
                     Console.WriteLine(p.APK);
                 }
@@ -280,15 +280,15 @@ namespace ProductsApp
                 APK = answer
 
             };
-
             container.AddToCars(car);
+            //container.AddToCars(car);
             
-            var serviceResponse = container.SaveChanges();
+            var serviceResponse = container.SaveChangesAsync();
 
-            foreach (var operationResponse in serviceResponse)
-            {
-                Console.WriteLine("Response: {0}", operationResponse.StatusCode);
-            }
+            //foreach (var operationResponse in serviceResponse)
+            //{
+            //    Console.WriteLine("Response: {0}", operationResponse.StatusCode);
+            //}
             
 
             Console.WriteLine($"Your result: Added a car");
