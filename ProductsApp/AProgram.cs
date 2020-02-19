@@ -142,11 +142,15 @@ namespace ProductsApp
 
             Console.WriteLine($"Your result: removed a car \n");
         }
-
+        
         //set the brand to what the user of the software wants 
         static _Brands SetBrand()
         {
+
+            //var brand = _Brands;
+
             var brand = _Brands.Audi;
+
             Console.WriteLine("Select your car brand from the following list: \n");
             Console.WriteLine("\tt - Tesla ");
             Console.WriteLine("\tf - Ferrari");

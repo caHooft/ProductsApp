@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 17-2-2020 09:15:24
+// Generation date: 19-2-2020 12:46:48
 namespace ProductsApp
 {
     /// <summary>
@@ -66,42 +66,6 @@ namespace ProductsApp
             return null;
         }
         /// <summary>
-        /// There are no comments for People in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("People")]
-        public global::Microsoft.OData.Client.DataServiceQuery<Person> People
-        {
-            get
-            {
-                if ((this._People == null))
-                {
-                    this._People = base.CreateQuery<Person>("People");
-                }
-                return this._People;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::Microsoft.OData.Client.DataServiceQuery<Person> _People;
-        /// <summary>
-        /// There are no comments for Trips in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Trips")]
-        public global::Microsoft.OData.Client.DataServiceQuery<Trip> Trips
-        {
-            get
-            {
-                if ((this._Trips == null))
-                {
-                    this._Trips = base.CreateQuery<Trip>("Trips");
-                }
-                return this._Trips;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::Microsoft.OData.Client.DataServiceQuery<Trip> _Trips;
-        /// <summary>
         /// There are no comments for Cars in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
@@ -120,22 +84,6 @@ namespace ProductsApp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         private global::Microsoft.OData.Client.DataServiceQuery<Car> _Cars;
         /// <summary>
-        /// There are no comments for People in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public void AddToPeople(Person person)
-        {
-            base.AddObject("People", person);
-        }
-        /// <summary>
-        /// There are no comments for Trips in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public void AddToTrips(Trip trip)
-        {
-            base.AddObject("Trips", trip);
-        }
-        /// <summary>
         /// There are no comments for Cars in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
@@ -152,52 +100,19 @@ namespace ProductsApp
             private const string Edmx = @"<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
   <edmx:DataServices>
     <Schema Namespace=""Demos"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
-      <EntityType Name=""Person"">
-        <Key>
-          <PropertyRef Name=""ID"" />
-        </Key>
-        <Property Name=""ID"" Type=""Edm.String"" Nullable=""false"" />
-        <Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-        <Property Name=""Description"" Type=""Edm.String"" />
-        <NavigationProperty Name=""Trips"" Type=""Collection(Demos.Trip)"" />
-      </EntityType>
-      <EntityType Name=""Trip"">
-        <Key>
-          <PropertyRef Name=""ID"" />
-        </Key>
-        <Property Name=""ID"" Type=""Edm.String"" Nullable=""false"" />
-        <Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-      </EntityType>
       <EntityType Name=""Car"">
         <Key>
           <PropertyRef Name=""ID"" />
         </Key>
         <Property Name=""ID"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""AmountMade"" Type=""Edm.Double"" Nullable=""false"" />
-        <Property Name=""Brand"" Type=""Demos._Brands"" Nullable=""false"" />
+        <Property Name=""APK"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""Colour"" Type=""Edm.String"" />
         <Property Name=""TimeWhenAddedToDatabase"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
-        <Property Name=""APK"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""Brand"" Type=""Demos._Brands"" Nullable=""false"" />
       </EntityType>
-      <EnumType Name=""_Brands"">
-        <Member Name=""Tesla"" Value=""0"" />
-        <Member Name=""Ferrari"" Value=""1"" />
-        <Member Name=""Mini"" Value=""2"" />
-        <Member Name=""Porsche"" Value=""3"" />
-        <Member Name=""Volkswagen"" Value=""4"" />
-        <Member Name=""Nissan"" Value=""5"" />
-        <Member Name=""Audi"" Value=""6"" />
-        <Member Name=""Ford"" Value=""7"" />
-        <Member Name=""Honda"" Value=""8"" />
-        <Member Name=""BMW"" Value=""9"" />
-        <Member Name=""Mercedes"" Value=""10"" />
-        <Member Name=""Toyota"" Value=""11"" />
-      </EnumType>
+      <EnumType Name=""_Brands"" />
       <EntityContainer Name=""DefaultContainer"">
-        <EntitySet Name=""People"" EntityType=""Demos.Person"">
-          <NavigationPropertyBinding Path=""Trips"" Target=""Trips"" />
-        </EntitySet>
-        <EntitySet Name=""Trips"" EntityType=""Demos.Trip"" />
         <EntitySet Name=""Cars"" EntityType=""Demos.Car"" />
       </EntityContainer>
     </Schema>
@@ -243,300 +158,6 @@ namespace ProductsApp
         }
     }
     /// <summary>
-    /// There are no comments for PersonSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("PersonSingle")]
-    public partial class PersonSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Person>
-    {
-        /// <summary>
-        /// Initialize a new PersonSingle object.
-        /// </summary>
-        public PersonSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) {}
-
-        /// <summary>
-        /// Initialize a new PersonSingle object.
-        /// </summary>
-        public PersonSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) {}
-
-        /// <summary>
-        /// Initialize a new PersonSingle object.
-        /// </summary>
-        public PersonSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Person> query)
-            : base(query) {}
-
-        /// <summary>
-        /// There are no comments for Trips in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Trips")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Trip> Trips
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Trips == null))
-                {
-                    this._Trips = Context.CreateQuery<global::ProductsApp.Trip>(GetPath("Trips"));
-                }
-                return this._Trips;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Trip> _Trips;
-    }
-    /// <summary>
-    /// There are no comments for Person in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// ID
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("ID")]
-    [global::Microsoft.OData.Client.EntitySet("People")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Person")]
-    public partial class Person : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Person object.
-        /// </summary>
-        /// <param name="ID">Initial value of ID.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public static Person CreatePerson(string ID, string name)
-        {
-            Person person = new Person();
-            person.ID = ID;
-            person.Name = name;
-            return person;
-        }
-        /// <summary>
-        /// There are no comments for Property ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ID")]
-        public string ID
-        {
-            get
-            {
-                return this._ID;
-            }
-            set
-            {
-                this.OnIDChanging(value);
-                this._ID = value;
-                this.OnIDChanged();
-                this.OnPropertyChanged("ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _ID;
-        partial void OnIDChanging(string value);
-        partial void OnIDChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Description")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Property Trips in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Trips")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::ProductsApp.Trip> Trips
-        {
-            get
-            {
-                return this._Trips;
-            }
-            set
-            {
-                this.OnTripsChanging(value);
-                this._Trips = value;
-                this.OnTripsChanged();
-                this.OnPropertyChanged("Trips");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::ProductsApp.Trip> _Trips = new global::Microsoft.OData.Client.DataServiceCollection<global::ProductsApp.Trip>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnTripsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::ProductsApp.Trip> value);
-        partial void OnTripsChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for TripSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("TripSingle")]
-    public partial class TripSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Trip>
-    {
-        /// <summary>
-        /// Initialize a new TripSingle object.
-        /// </summary>
-        public TripSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) {}
-
-        /// <summary>
-        /// Initialize a new TripSingle object.
-        /// </summary>
-        public TripSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) {}
-
-        /// <summary>
-        /// Initialize a new TripSingle object.
-        /// </summary>
-        public TripSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Trip> query)
-            : base(query) {}
-
-    }
-    /// <summary>
-    /// There are no comments for Trip in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// ID
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("ID")]
-    [global::Microsoft.OData.Client.EntitySet("Trips")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Trip")]
-    public partial class Trip : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Trip object.
-        /// </summary>
-        /// <param name="ID">Initial value of ID.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public static Trip CreateTrip(string ID, string name)
-        {
-            Trip trip = new Trip();
-            trip.ID = ID;
-            trip.Name = name;
-            return trip;
-        }
-        /// <summary>
-        /// There are no comments for Property ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ID")]
-        public string ID
-        {
-            get
-            {
-                return this._ID;
-            }
-            set
-            {
-                this.OnIDChanging(value);
-                this._ID = value;
-                this.OnIDChanged();
-                this.OnPropertyChanged("ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _ID;
-        partial void OnIDChanging(string value);
-        partial void OnIDChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
     /// There are no comments for CarSingle in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("CarSingle")]
@@ -577,18 +198,18 @@ namespace ProductsApp
         /// </summary>
         /// <param name="ID">Initial value of ID.</param>
         /// <param name="amountMade">Initial value of AmountMade.</param>
-        /// <param name="brand">Initial value of Brand.</param>
-        /// <param name="timeWhenAddedToDatabase">Initial value of TimeWhenAddedToDatabase.</param>
         /// <param name="aPK">Initial value of APK.</param>
+        /// <param name="timeWhenAddedToDatabase">Initial value of TimeWhenAddedToDatabase.</param>
+        /// <param name="brand">Initial value of Brand.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public static Car CreateCar(int ID, double amountMade, global::ProductsApp._Brands brand, global::System.DateTimeOffset timeWhenAddedToDatabase, bool aPK)
+        public static Car CreateCar(int ID, double amountMade, bool aPK, global::System.DateTimeOffset timeWhenAddedToDatabase, global::ProductsApp._Brands brand)
         {
             Car car = new Car();
             car.ID = ID;
             car.AmountMade = amountMade;
-            car.Brand = brand;
-            car.TimeWhenAddedToDatabase = timeWhenAddedToDatabase;
             car.APK = aPK;
+            car.TimeWhenAddedToDatabase = timeWhenAddedToDatabase;
+            car.Brand = brand;
             return car;
         }
         /// <summary>
@@ -638,28 +259,28 @@ namespace ProductsApp
         partial void OnAmountMadeChanging(double value);
         partial void OnAmountMadeChanged();
         /// <summary>
-        /// There are no comments for Property Brand in the schema.
+        /// There are no comments for Property APK in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Brand")]
-        public global::ProductsApp._Brands Brand
+        [global::Microsoft.OData.Client.OriginalNameAttribute("APK")]
+        public bool APK
         {
             get
             {
-                return this._Brand;
+                return this._APK;
             }
             set
             {
-                this.OnBrandChanging(value);
-                this._Brand = value;
-                this.OnBrandChanged();
-                this.OnPropertyChanged("Brand");
+                this.OnAPKChanging(value);
+                this._APK = value;
+                this.OnAPKChanged();
+                this.OnPropertyChanged("APK");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::ProductsApp._Brands _Brand;
-        partial void OnBrandChanging(global::ProductsApp._Brands value);
-        partial void OnBrandChanged();
+        private bool _APK;
+        partial void OnAPKChanging(bool value);
+        partial void OnAPKChanged();
         /// <summary>
         /// There are no comments for Property Colour in the schema.
         /// </summary>
@@ -707,28 +328,28 @@ namespace ProductsApp
         partial void OnTimeWhenAddedToDatabaseChanging(global::System.DateTimeOffset value);
         partial void OnTimeWhenAddedToDatabaseChanged();
         /// <summary>
-        /// There are no comments for Property APK in the schema.
+        /// There are no comments for Property Brand in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("APK")]
-        public bool APK
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Brand")]
+        public global::ProductsApp._Brands Brand
         {
             get
             {
-                return this._APK;
+                return this._Brand;
             }
             set
             {
-                this.OnAPKChanging(value);
-                this._APK = value;
-                this.OnAPKChanged();
-                this.OnPropertyChanged("APK");
+                this.OnBrandChanging(value);
+                this._Brand = value;
+                this.OnBrandChanged();
+                this.OnPropertyChanged("Brand");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private bool _APK;
-        partial void OnAPKChanging(bool value);
-        partial void OnAPKChanged();
+        private global::ProductsApp._Brands _Brand;
+        partial void OnBrandChanging(global::ProductsApp._Brands value);
+        partial void OnBrandChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -753,82 +374,13 @@ namespace ProductsApp
     [global::Microsoft.OData.Client.OriginalNameAttribute("_Brands")]
     public enum _Brands
     {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Tesla")]
-        Tesla = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Ferrari")]
-        Ferrari = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Mini")]
-        Mini = 2,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Porsche")]
-        Porsche = 3,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Volkswagen")]
-        Volkswagen = 4,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Nissan")]
-        Nissan = 5,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Audi")]
-        Audi = 6,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Ford")]
-        Ford = 7,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Honda")]
-        Honda = 8,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
-        BMW = 9,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Mercedes")]
-        Mercedes = 10,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Toyota")]
-        Toyota = 11
+        Tesla, Ferrari, Mini, Porsche, Volkswagen, Nissan, Audi, Ford, Honda, BMW, Mercedes, Toyota
     }
     /// <summary>
     /// Class containing all extension methods
     /// </summary>
     public static class ExtensionMethods
     {
-        /// <summary>
-        /// Get an entity of type global::ProductsApp.Person as global::ProductsApp.PersonSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::ProductsApp.PersonSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Person> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::ProductsApp.PersonSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::ProductsApp.Person as global::ProductsApp.PersonSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="iD">The value of iD</param>
-        public static global::ProductsApp.PersonSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Person> source,
-            string iD)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "ID", iD }
-            };
-            return new global::ProductsApp.PersonSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::ProductsApp.Trip as global::ProductsApp.TripSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::ProductsApp.TripSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Trip> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::ProductsApp.TripSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::ProductsApp.Trip as global::ProductsApp.TripSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="iD">The value of iD</param>
-        public static global::ProductsApp.TripSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ProductsApp.Trip> source,
-            string iD)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "ID", iD }
-            };
-            return new global::ProductsApp.TripSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
         /// <summary>
         /// Get an entity of type global::ProductsApp.Car as global::ProductsApp.CarSingle specified by key from an entity set
         /// </summary>
