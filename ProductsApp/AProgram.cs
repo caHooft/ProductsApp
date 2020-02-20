@@ -37,7 +37,7 @@ namespace ProductsApp
                 if (p.ID == cleanInput)
                 {
                     Console.WriteLine(p.AmountMade);
-                    //Console.WriteLine(p.Brand);
+                    Console.WriteLine(p.Brand);
                     Console.WriteLine(p.Colour);
                     Console.WriteLine(p.APK);
                 }
@@ -260,8 +260,6 @@ namespace ProductsApp
             Console.Write("Type the color of the car, and then press Enter: \n");
             colour = Console.ReadLine();
 
-            //Console.WriteLine("\tt - Add creation time");
-
             Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
             input1 = Console.ReadLine().ToLower();
 
@@ -280,21 +278,20 @@ namespace ProductsApp
                 APK = answer
 
             };
+            
             container.AddToCars(car);
-            //container.AddToCars(car);
-            
-            var serviceResponse = container.SaveChangesAsync();
 
-            //foreach (var operationResponse in serviceResponse)
-            //{
-            //    Console.WriteLine("Response: {0}", operationResponse.StatusCode);
-            //}
+            var serviceResponse = container.SaveChanges();
             
-
+            foreach (var operationResponse in serviceResponse)
+            {
+                Console.WriteLine("Response: {0}", operationResponse.StatusCode);
+            }
+            
             Console.WriteLine($"Your result: Added a car");
         }
         
-        //this gets run first i also call the other functions from here
+        //this runs first, I also call the other functions from here
         static void Main(string[] args)
         {
             bool endApp = false;

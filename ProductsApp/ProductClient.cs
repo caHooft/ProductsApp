@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 19-2-2020 16:23:44
+// Generation date: 20-2-2020 10:23:57
 namespace ProductsApp
 {
     /// <summary>
@@ -111,7 +111,20 @@ namespace ProductsApp
         <Property Name=""TimeWhenAddedToDatabase"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
         <Property Name=""Brand"" Type=""Demos._Brands"" Nullable=""false"" />
       </EntityType>
-      <EnumType Name=""_Brands"" />
+      <EnumType Name=""_Brands"">
+        <Member Name=""Audi"" Value=""6"" />
+        <Member Name=""BMW"" Value=""9"" />
+        <Member Name=""Ferrari"" Value=""1"" />
+        <Member Name=""Ford"" Value=""7"" />
+        <Member Name=""Honda"" Value=""8"" />
+        <Member Name=""Mercedes"" Value=""10"" />
+        <Member Name=""Mini"" Value=""2"" />
+        <Member Name=""Nissan"" Value=""5"" />
+        <Member Name=""Porsche"" Value=""3"" />
+        <Member Name=""Tesla"" Value=""0"" />
+        <Member Name=""Toyota"" Value=""11"" />
+        <Member Name=""Volkswagen"" Value=""4"" />
+      </EnumType>
       <EntityContainer Name=""DefaultContainer"">
         <EntitySet Name=""Cars"" EntityType=""Demos.Car"" />
       </EntityContainer>
@@ -374,30 +387,30 @@ namespace ProductsApp
     [global::Microsoft.OData.Client.OriginalNameAttribute("_Brands")]
     public enum _Brands
     {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Tesla")]
-        Tesla = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Ferrari")]
-        Ferrari = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Mini")]
-        Mini = 2,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Porsche")]
-        Porsche = 3,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Volkswagen")]
-        Volkswagen = 4,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Nissan")]
-        Nissan = 5,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Audi")]
         Audi = 6,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
+        BMW = 9,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Ferrari")]
+        Ferrari = 1,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Ford")]
         Ford = 7,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Honda")]
         Honda = 8,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
-        BMW = 9,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Mercedes")]
         Mercedes = 10,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Mini")]
+        Mini = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Nissan")]
+        Nissan = 5,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Porsche")]
+        Porsche = 3,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Tesla")]
+        Tesla = 0,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Toyota")]
-        Toyota = 11
+        Toyota = 11,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Volkswagen")]
+        Volkswagen = 4
     }
     /// <summary>
     /// Class containing all extension methods
