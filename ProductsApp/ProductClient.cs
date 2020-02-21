@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 20-2-2020 13:57:08
+// Generation date: 21-2-2020 11:20:06
 namespace ProductsApp
 {
     /// <summary>
@@ -86,11 +86,11 @@ namespace ProductsApp
         /// <summary>
         /// There are no comments for Cars in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        /*[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         public void AddToCars(Car car)
         {
             base.AddObject("Cars", car);
-        }
+        }*/
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         private abstract class GeneratedEdmModel
         {

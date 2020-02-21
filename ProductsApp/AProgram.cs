@@ -246,8 +246,8 @@ namespace ProductsApp
             string colour = "";
             int cleanNum1 = 0;
             int iD = 0;
-
-            iD = CountAllProducts(container);
+            _Brands brand = _Brands.Audi;
+            var p = new Car();
 
             Console.Write("Type the number of cars made, and then press Enter: \n");
             input1 = Console.ReadLine();
@@ -264,30 +264,29 @@ namespace ProductsApp
             Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
             input1 = Console.ReadLine().ToLower();
 
+            iD = CountAllProducts(container);
+
             if (string.Equals(input1, "true"))
             {
                 answer = true;
             }
 
-            var p = new Car()
-            {
-                ID = iD,
-                AmountMade = cleanNum1,
-                Brand = SetBrand(),
-                Colour = colour,
-                TimeWhenAddedToDatabase = DateTime.Now,
-                APK = answer
+            brand = SetBrand();
 
-            };
-
-            container.AddToCars(p);
-
-            //container.UpdateObject(p);
+            p.ID = iD;
+            p.AmountMade = cleanNum1;
+            p.Brand = brand;
+            p.Colour = colour;
+            p.TimeWhenAddedToDatabase = DateTime.Now;
+            p.APK = answer;
+            
+            container.AddObject("cars", p);
 
             var serviceResponse = container.SaveChanges();
 
             foreach (var operationResponse in serviceResponse)
             {
+                
                 Console.WriteLine("Response: {0}", operationResponse.StatusCode);
             }
             
@@ -323,19 +322,15 @@ namespace ProductsApp
                         break;
 
                     case "a":
-                        //works
+                        //works but has wierd error after it succeeds
                         Console.WriteLine("\n");
                         AddCar(container);
                         break;
 
                     case "c":
-                        //changes values client side
-                        //server side problems
-
+                        //works
                         Console.WriteLine("\n");
                         ChangeEntry(container);
-                        //search car by id
-                        //change car parameters
                         break;
 
                     case "r":
@@ -345,12 +340,9 @@ namespace ProductsApp
                         break;
 
                     case "R":
-                        //didnt start makeing this yet
-                        //should be implemented server side
+                        //works
                         Console.WriteLine("\n");
                         DeleteEntry(container);
-                        //search car by id
-                        //remove car
                         break;
                 }
 
