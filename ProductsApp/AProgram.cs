@@ -8,12 +8,15 @@ namespace ProductsApp
         // Get an entire entity set and sets carstracker to the number of cars which i use to auto increment the primairy key
         static int CountAllProducts(DefaultContainer container)
         {
-            int carsTracker = 0;
+            int carsTracker = 5;
 
+            carsTracker++;
+            /*
             foreach (var p in container.Cars)
             {
                 carsTracker++;
             }
+            */
             Console.WriteLine("Currently this database holds {0} cars", carsTracker);
             return carsTracker;
         }
@@ -42,8 +45,6 @@ namespace ProductsApp
                     Console.WriteLine(p.APK);
                 }
             }
-
-
             Console.WriteLine($"Your result: read the info of a car \n");
         }
 
@@ -268,7 +269,7 @@ namespace ProductsApp
                 answer = true;
             }
 
-            var car = new Car()
+            var p = new Car()
             {
                 ID = iD,
                 AmountMade = cleanNum1,
@@ -278,11 +279,13 @@ namespace ProductsApp
                 APK = answer
 
             };
-            
-            container.AddToCars(car);
+
+            container.AddToCars(p);
+
+            //container.UpdateObject(p);
 
             var serviceResponse = container.SaveChanges();
-            
+
             foreach (var operationResponse in serviceResponse)
             {
                 Console.WriteLine("Response: {0}", operationResponse.StatusCode);
