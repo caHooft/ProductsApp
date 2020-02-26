@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 21-2-2020 11:20:06
+// Generation date: 26-2-2020 16:28:32
 namespace ProductsApp
 {
     /// <summary>
@@ -69,14 +69,14 @@ namespace ProductsApp
         /// There are no comments for Cars in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Cars")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("cars")]
         public global::Microsoft.OData.Client.DataServiceQuery<Car> Cars
         {
             get
             {
                 if ((this._Cars == null))
                 {
-                    this._Cars = base.CreateQuery<Car>("Cars");
+                    this._Cars = base.CreateQuery<Car>("cars");
                 }
                 return this._Cars;
             }
@@ -86,11 +86,11 @@ namespace ProductsApp
         /// <summary>
         /// There are no comments for Cars in the schema.
         /// </summary>
-        /*[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         public void AddToCars(Car car)
         {
-            base.AddObject("Cars", car);
-        }*/
+            base.AddObject("cars", car);
+        }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         private abstract class GeneratedEdmModel
         {
@@ -126,7 +126,7 @@ namespace ProductsApp
         <Member Name=""Volkswagen"" Value=""4"" />
       </EnumType>
       <EntityContainer Name=""DefaultContainer"">
-        <EntitySet Name=""Cars"" EntityType=""Demos.Car"" />
+        <EntitySet Name=""cars"" EntityType=""Demos.Car"" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>
@@ -202,7 +202,7 @@ namespace ProductsApp
     /// ID
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("ID")]
-    [global::Microsoft.OData.Client.EntitySet("Cars")]
+    [global::Microsoft.OData.Client.EntitySet("cars")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("Car")]
     public partial class Car : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
