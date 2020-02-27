@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 26-2-2020 16:28:32
+// Generation date: 27-2-2020 16:09:26
 namespace ProductsApp
 {
     /// <summary>
