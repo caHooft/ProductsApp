@@ -5,11 +5,12 @@ namespace ProductsApp
 
     public class AProgram
     {
-        // Get an entire entity set and sets carstracker to the number of cars which i use to auto increment the primairy key
-        static int CountAllProducts(DefaultContainer container)
+        //This method exists so you can loop through the given container of cars and find the perfect primairy key(known as ID for car)
+        static int GetCorrectID(DefaultContainer container)
         {
             int carsTracker = 0;
 
+            //Here i loop through all the instances of Car in Cars stored in the container
             foreach (var p in container.Cars)
             {
                 if (p.ID >= carsTracker)
@@ -17,29 +18,32 @@ namespace ProductsApp
                     carsTracker = p.ID;
                 }
             }
-
+            //I increment the result by 1 so i do not get the same result as the currently highest ID but 1 higher
             carsTracker++;
 
-            Console.WriteLine("Currently this database holds {0} cars", carsTracker);
             return carsTracker;
         }
 
+        //This method exists to read all the information regarding a specific entity
         static void ReadEntry(DefaultContainer container)
         {
             int cleanInput = 0;
+            //Asks the user which entry the user wants information about
             Console.WriteLine($"Give the ID of the car you wish to read \n");
 
             string userInput = Console.ReadLine();
 
-
+            //Checks if the input given by the user is an actual valid int
             while (!int.TryParse(userInput, out  cleanInput))
             {
                 Console.Write("This is not valid input. Please enter an integer value: \n");
                 userInput = Console.ReadLine();
             }
 
+            //This loops through all cars to find the correct entry in the database
             foreach (var p in container.Cars)
             {
+                //when the correct entry in the database is found give the user the requested information
                 if (p.ID == cleanInput)
                 {
                     Console.WriteLine(p.AmountMade);
@@ -48,6 +52,7 @@ namespace ProductsApp
                     Console.WriteLine(p.APK);
                 }
             }
+
             Console.WriteLine($"Your result: read the info of a car \n");
         }
 
@@ -268,7 +273,7 @@ namespace ProductsApp
             Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
             input1 = Console.ReadLine().ToLower();
 
-            iD = CountAllProducts(container);
+            iD = GetCorrectID(container);
 
             if (string.Equals(input1, "true"))
             {
