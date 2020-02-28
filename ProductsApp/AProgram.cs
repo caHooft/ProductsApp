@@ -99,6 +99,7 @@ namespace ProductsApp
                     p.Brand = SetBrand();
                     p.Colour = colour;
                     p.APK = answer;
+                    p.TimeWhenAddedToDatabase = DateTime.Now;
                     container.UpdateObject(p);     
 
                     var serviceResponse = container.SaveChanges();
